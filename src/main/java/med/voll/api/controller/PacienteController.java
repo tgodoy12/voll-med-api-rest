@@ -1,9 +1,9 @@
 package med.voll.api.controller;
 
 import jakarta.validation.Valid;
-import med.voll.api.medico.DatosRegistroMedico;
-import med.voll.api.medico.Medico;
-import med.voll.api.medico.MedicoRepositorio;
+import med.voll.api.paciente.DatosRegistroPaciente;
+import med.voll.api.paciente.Paciente;
+import med.voll.api.paciente.PacienteRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,19 +11,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 @RestController
-@RequestMapping("/medicos")
-public class MedicoController {
+@RequestMapping("/pacientes")
+public class PacienteController {
 
     @Autowired
-    private MedicoRepositorio medicoRepositorio;
+    private PacienteRepositorio pacienteRepositorio;
 
     @Transactional
     @PostMapping
-    public void registrar(@RequestBody @Valid DatosRegistroMedico datosRegistroMedico) {
-        medicoRepositorio.save(new Medico(datosRegistroMedico));
+    public void registrar(@RequestBody @Valid DatosRegistroPaciente datosRegistroPaciente) {
+        pacienteRepositorio.save(new Paciente(datosRegistroPaciente));
     }
 
 
