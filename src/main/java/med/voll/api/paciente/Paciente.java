@@ -26,11 +26,11 @@ public class Paciente {
     @Embedded
     private Direccion direccion;  // atributo multivaluado
 
-    public Paciente(DatosRegistroPaciente datosRegistroPaciente) {
-        this.nombre = datosRegistroPaciente.nombre();
-        this.email = datosRegistroPaciente.email();
-        this.telefono = datosRegistroPaciente.telefono();
-        this.documento = datosRegistroPaciente.documento();
-        this.direccion = new Direccion(datosRegistroPaciente.direccion());
+    public Paciente(PacienteDTO pacienteDTO) {
+        this.nombre = pacienteDTO.nombre();
+        this.email = pacienteDTO.email();
+        this.telefono = pacienteDTO.telefono();
+        this.documento = pacienteDTO.documento();
+        this.direccion = new Direccion(pacienteDTO.direccion());
     }
 }

@@ -18,13 +18,13 @@ public class Direccion {
     private String estado;
     private String codigoPostal;
 
-    public Direccion(DatosDireccion datosDireccion) {
-        this.calle = datosDireccion.calle();
-        this.numero = datosDireccion.numero();
-        this.complemento = datosDireccion.complemento();
-        this.barrio = datosDireccion.barrio();
-        this.ciudad = datosDireccion.ciudad();
-        this.estado = datosDireccion.estado();
-        this.codigoPostal = datosDireccion.codigoPostal();
+    public Direccion(DireccionDTO direccionDTO) {
+        this.calle = direccionDTO.calle();
+        this.numero = direccionDTO.numero();
+        this.complemento = direccionDTO.complemento();
+        this.barrio = direccionDTO.barrio();
+        this.ciudad = direccionDTO.ciudad();
+        this.estado = direccionDTO.estado();
+        this.codigoPostal = direccionDTO.codigoPostal();
     }
 }

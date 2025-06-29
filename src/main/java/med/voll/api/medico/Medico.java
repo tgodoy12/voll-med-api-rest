@@ -29,12 +29,12 @@ public class Medico {
     @Embedded
     private Direccion direccion; //atributo multivaluado, se transforma en atributos simples en la tabla
 
-    public Medico(DatosRegistroMedico datosRegistroMedico) {
-        this.nombre = datosRegistroMedico.nombre();
-        this.email = datosRegistroMedico.email();
-        this.telefono = datosRegistroMedico.telefono();
-        this.documento = datosRegistroMedico.documento();
-        this.especialidad = datosRegistroMedico.especialidad();
-        this.direccion = new Direccion(datosRegistroMedico.direccion());
+    public Medico(MedicoDTO medicoDTO) {
+        this.nombre = medicoDTO.nombre();
+        this.email = medicoDTO.email();
+        this.telefono = medicoDTO.telefono();
+        this.documento = medicoDTO.documento();
+        this.especialidad = medicoDTO.especialidad();
+        this.direccion = new Direccion(medicoDTO.direccion());
     }
 }

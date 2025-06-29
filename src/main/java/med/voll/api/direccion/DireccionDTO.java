@@ -2,7 +2,7 @@ package med.voll.api.direccion;
 
 import jakarta.validation.constraints.NotBlank;
 
-public record DatosDireccion(
+public record DireccionDTO(
         @NotBlank String calle,
         String numero,
         String complemento,
