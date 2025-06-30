@@ -1,13 +1,15 @@
 package med.voll.api.medico;
 
-public record ListaMedicoDTO(
+public record ListarMedicoDTO(
+        long id,
         String nombre,
         String email,
         String documento,
         Especialidad especialidad) {
 
-    public ListaMedicoDTO(Medico medico) {
+    public ListarMedicoDTO(Medico medico) {
         this(
+                medico.getId(),
                 medico.getNombre(),
                 medico.getEmail(),
                 medico.getDocumento(),
