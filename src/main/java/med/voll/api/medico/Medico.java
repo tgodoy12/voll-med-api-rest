@@ -19,6 +19,9 @@ public class Medico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Column(name = "is_active")
+    private boolean isActive;
     private String nombre;
     private String email;
     private String telefono;
@@ -31,6 +34,7 @@ public class Medico {
     private Direccion direccion; //atributo multivaluado, se transforma en atributos simples en la tabla
 
     public Medico(MedicoDTO medicoDTO) {
+        this.isActive = true;
         this.nombre = medicoDTO.nombre();
         this.email = medicoDTO.email();
         this.telefono = medicoDTO.telefono();
@@ -43,5 +47,9 @@ public class Medico {
         if(actualizarMedicoDTO.nombre() != null) this.nombre = actualizarMedicoDTO.nombre();
         if(actualizarMedicoDTO.telefono() != null) this.telefono = actualizarMedicoDTO.telefono();
         if(actualizarMedicoDTO.direccion() != null) this.direccion.actualizarDireccion(actualizarMedicoDTO.direccion());
+    }
+
+    public void eliminar() {
+        this.isActive = false;
     }
 }

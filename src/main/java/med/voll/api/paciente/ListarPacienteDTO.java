@@ -7,6 +7,11 @@ public record ListarPacienteDTO(
         String documento
 ) {
     public ListarPacienteDTO(Paciente paciente) {
-        this(paciente.getId(), paciente.getNombre(), paciente.getEmail(), paciente.getDocumento());
+        this(
+                paciente.getId(),
+                paciente.getNombre(),
+                paciente.getEmail(),
+                paciente.getDocumento()
+        );
     }
 }
